@@ -21,19 +21,20 @@ function llenararreglos($algo){
 
 
 class automata{
-    
+    public $tipo ="";
     public $Estado = array();
     public $EstadoInicial = array();
     public $EstadoFinal = array();
     public $Alfabeto = array();
     public $ñe = array();
     
-    function __construct($p1,$p2,$p3,$p4,$p5){
+    function __construct($p1,$p2,$p3,$p4,$p5,$p6){
         $this->Estado = llenararreglos($p1);
         $this->EstadoInicial = llenararreglos($p2);
         $this->EstadoFinal = llenararreglos($p3);
         $this->Alfabeto = llenararreglos($p4);
         $this->ñe = llenararreglos($p5);
+        $this->tipo = $p6;
     }
 
     function darE($nuevoestados){
@@ -69,6 +70,13 @@ class automata{
     }
     function verñe(){
         return $this->ñe;
+    }
+
+    function dartipo($nuevotipo){
+        $this->tipo=$nuevotipo;
+    }
+    function vertipo(){
+        return $this->tipo;
     }
 }
 

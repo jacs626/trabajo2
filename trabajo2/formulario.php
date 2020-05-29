@@ -17,25 +17,6 @@
     }
     
     
-    echo "Los estados son:"."</br>";
-    foreach ($_SESSION['automata_1']->verE() as $estado) {
-        echo $estado."</br>";
-    }
-    
-    echo "</br>"."Los estados finales son:"."</br>";
-    foreach ($_SESSION['automata_1']->verEF() as $estado) {
-        echo $estado."</br>";
-    }
-    
-    echo "</br>"."Los estados Iniciales son:"."</br>";
-    foreach ($_SESSION['automata_1']->verEI() as $estado) {
-        echo $estado."</br>";
-    }
-    
-    echo "</br>"."El alfabeto es:"."</br>";
-    foreach ($_SESSION['automata_1']->verAlf() as $estado) {
-        echo $estado."</br>";
-    }
 ?>
 
 <html>
@@ -50,7 +31,7 @@
                     ?>
                     <input type="text"  placeholder="Estados siguientes" name="EstadosSig[]"><br>
                 <?php
-                echo"</td>";
+                    echo"</td>";
                 }  
             }
             echo "</tr>";
