@@ -21,12 +21,14 @@ function llenararreglos($algo){
 
 
 class automata{
-    public $tipo ="";
-    public $Estado = array();
-    public $EstadoInicial = array();
-    public $EstadoFinal = array();
-    public $Alfabeto = array();
-    public $ñe = array();
+
+    
+    public $Estado;
+    public $EstadoInicial;
+    public $EstadoFinal;
+    public $Alfabeto;
+    public $ñe;
+    public $tipo;
     
     function __construct($p1,$p2,$p3,$p4,$p5,$p6){
         $this->Estado = llenararreglos($p1);

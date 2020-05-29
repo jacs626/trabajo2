@@ -29,11 +29,10 @@
         echo "</br>"."Los estados & son: ";
         echo "<table border=6>";
         $c=0;
-        $maux= $_SESSION['automata_1'];
-        foreach($_SESSION['automata_1']->verAlf() as $fila){
+        foreach($autom->verAlf() as $fila){
             echo "<tr>";
-            foreach($_SESSION['automata_1']->verE() as $columna){
-                echo "<td>&($columna,$fila)= ".$maux->verñe()[$c];
+            foreach($autom->verE() as $columna){
+                echo "<td>&($columna,$fila)= ".$autom->verñe()[$c];
                 echo "</br>";
                 $c=$c+1;
             echo"</td>";

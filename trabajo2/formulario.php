@@ -1,21 +1,22 @@
 <?php
-    require("config.php"); 
+    session_start();
     include_once("Automata.php");
-
+    include("verautom.php");
+    $m=($_SESSION["automatas"])[$_SESSION['ctemod']];
+    $m=unserialize($m);
 
     if(!empty($_POST["Estados"])){
-        $_SESSION['automata_1']->darE(llenararreglos($_POST["Estados"]));
+        $m->darE(llenararreglos($_POST["Estados"]));
     }
     if(!empty($_POST["Estadoincial"])){
-        $_SESSION['automata_1']->darEI(llenararreglos($_POST["Estadoincial"]));
+        $m->darEI(llenararreglos($_POST["Estadoincial"]));
     }
     if(!empty($_POST["Estadofinal"])){
-        $_SESSION['automata_1']->darEF(llenararreglos($_POST["Estadofinal"]));
+        $m->darEF(llenararreglos($_POST["Estadofinal"]));
     }
     if(!empty($_POST["Alfabeto"])){
-        $_SESSION['automata_1']->darAlf(llenararreglos($_POST["Alfabeto"]));
+        $m->darAlf(llenararreglos($_POST["Alfabeto"]));
     }
-    
     
 ?>
 
@@ -24,9 +25,9 @@
         <form action="formulario2.php" method="POST">
             <?php
             echo "<table border=6>";
-            foreach($_SESSION['automata_1']->verAlf() as $fila){
+            foreach($m->verAlf() as $fila){
                 echo "<tr>";
-                foreach($_SESSION['automata_1']->verE() as $columna){
+                foreach($m->verE() as $columna){
                     echo "<td>&($columna,$fila)= ";
                     ?>
                     <input type="text"  placeholder="Estados siguientes" name="EstadosSig[]"><br>
@@ -35,10 +36,12 @@
                 }  
             }
             echo "</tr>";
+            ($_SESSION["automatas"])[$_SESSION['ctemod']]=serialize($m);
             ?>
-            <p>
-            <input type="submit" value="enviado" name="enviado">
-            </p>
+            <input type="submit" value="enviar">
+        </form>
+        <form action="formulario0.html" method="POST">
+            <input type="submit" value="volver al inicio">
         </form>
     </body>
 </html>
