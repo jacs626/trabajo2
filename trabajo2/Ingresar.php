@@ -21,10 +21,22 @@
             <input type="text"  placeholder="Alfabeto" name="Alfabeto"><br>
             <input type="text"  placeholder="Estado Inicial" name="Estadoincial"><br>
             <input type="text"  placeholder="Estados Finales" name="Estadofinal"><br></br>
+            <?php
+                if($_POST["tipo"]=="AFND"){
+                    ?>
+                    <p>¿Usa epsilon?</p>
+                    <select name= "epsi">
+                        <option value="si">si</option>
+                        <option value="no">no</option>
+                    </select>
+                    <?php
+                }
+                
+            ?>
             <input type="submit" value="enviar" name="enviar">
             
         </form>
-        <form action="formulario0.html" method="POST">
+        <form action="formulario0.php" method="POST">
             <input type="submit" value="volver atras" name="enviar">
         </form>
         

@@ -36,11 +36,22 @@
                 }  
             }
             echo "</tr>";
+            if($_POST["epsi"]=="si"){
+                echo "<table border=6>";
+                foreach($m->verE() as $columna){
+                    echo "<td>&($columna,ε)= " ;
+                    ?>
+                    <input type="text"  placeholder="Estados siguientes" name="est[]"><br>
+                <?php
+                    echo"</td>";
+                }
+
+            }         
             ($_SESSION["automatas"])[$_SESSION['ctemod']]=serialize($m);
             ?>
             <input type="submit" value="enviar">
         </form>
-        <form action="formulario0.html" method="POST">
+        <form action="formulario0.php" method="POST">
             <input type="submit" value="volver al inicio">
         </form>
     </body>

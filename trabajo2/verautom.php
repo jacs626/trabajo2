@@ -1,4 +1,5 @@
 <?php
+    
     function ver($autom){
         echo "El automata es: ";
         echo $autom->vertipo();
@@ -38,6 +39,15 @@
             echo"</td>";
             }
         }  
-        echo "</tr>";
+        
+        if($c<count($autom->verñe())){
+            echo "</tr>";
+            echo "<table border=6>";
+            foreach($autom->verE() as $estado){
+                echo "<td>&($estado,ε)= ".$autom->verñe()[$c];
+                $c+=1;
+                echo"</td>";
+            }
+        }
     }
 ?>
