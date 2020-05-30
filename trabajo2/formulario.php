@@ -20,6 +20,7 @@
     
 ?>
 
+
 <html>
     <body>
         <form action="formulario2.php" method="POST">
