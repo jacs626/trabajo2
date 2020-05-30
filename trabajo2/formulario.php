@@ -1,7 +1,6 @@
 <?php
     session_start();
     include_once("Automata.php");
-    include("verautom.php");
     $m=($_SESSION["automatas"])[$_SESSION['ctemod']];
     $m=unserialize($m);
 
