@@ -36,7 +36,7 @@
                 }  
             }
             echo "</tr>";
-            if($_POST["epsi"]=="si"){
+            if(!empty($_POST["epsi"]) && $_POST["epsi"]=="si"){
                 echo "<table border=6>";
                 foreach($m->verE() as $columna){
                     echo "<td>&($columna,ε)= " ;
