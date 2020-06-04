@@ -21,8 +21,6 @@ function llenararreglos($algo){
 
 
 class automata{
-
-    
     public $Estado;
     public $EstadoInicial;
     public $EstadoFinal;
@@ -35,7 +33,7 @@ class automata{
         $this->EstadoInicial = llenararreglos($p2);
         $this->EstadoFinal = llenararreglos($p3);
         $this->Alfabeto = llenararreglos($p4);
-        $this->ñe = llenararreglos($p5);
+        $this->ñe = $p5;
         $this->tipo = $p6;
     }
 

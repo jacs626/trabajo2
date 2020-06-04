@@ -13,11 +13,13 @@
             }
         }
         return $nofinales;
-        
     }
 
     function simplificar($automata){
-        
+        $final=$automata->verEF();
+        $nofinal=nofinales($automata);
+
     }
+
 
 ?>

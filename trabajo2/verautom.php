@@ -26,30 +26,21 @@
             echo $estado.",";
         }
         echo "</br>";
-        
-        echo "</br>"."Los estados & son: ";
-        echo "<table border=6>";
         $c=0;
-        foreach($autom->verAlf() as $fila){
-            echo "<tr>";
-            foreach($autom->verE() as $columna){
-                echo "<td>&($columna,$fila)= ".$autom->verñe()[$c];
-                echo "</br>";
-                $c=$c+1;
-            echo"</td>";
-            }
-        }  
+        echo "</br>"."Los estados & son: ";
         
-        if($c<count($autom->verñe())){
-            echo "</tr>";
-            echo "<table border=6>";
-            foreach($autom->verE() as $estado){
-                echo "<td>&($estado,ε)= ".$autom->verñe()[$c];
-                $c+=1;
-                echo"</td>";
-            }
+        foreach($autom->verñe() as $tupla){
+            echo "</br>&(".$tupla[0].",".$tupla[1].")=".$tupla[2]."; ";
+            $c+=1;
         }
     }
 
-
+    function comprobarvacio($arreglo){
+        foreach($arreglo as $valor){
+            if(!empty($valor)){
+                return FALSE;
+            }
+        }
+        return TRUE;
+    }
 ?>
