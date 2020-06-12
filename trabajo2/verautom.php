@@ -33,6 +33,7 @@
             echo "</br>&(".$tupla[0].",".$tupla[1].")=".$tupla[2]."; ";
             $c+=1;
         }
+        echo "</br>"."=======================================================";
     }
 
     function comprobarvacio($arreglo){
